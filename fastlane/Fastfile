@@ -1,0 +1,21 @@
+default_platform(:android)
+
+platform :android do
+
+  before_all do |lane, options|
+   @build_type = "Debug"
+    if not options.empty?
+      @build_type = options[:release] ? "Release" : "Debug"
+    end
+  end
+
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Assemble Build"
+  lane :assemble_build do
+     gradle(task: "assemble", build_type: @build_type)
+  end
+end
