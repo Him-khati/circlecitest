@@ -9,7 +9,7 @@
     android_config: &android_config
       working_directory: *workspace
       docker:
-        - image: circleci/android:api-27-alpha
+        - image: circleci/android:api-28-alpha
       environment:
         TERM: dumb
         _JAVA_OPTIONS: "-Xmx2048m -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap"
@@ -48,7 +48,7 @@
     install_ruby_bundler: &install_ruby_bundler
       run:
         name: Install Bundler 2
-        command: gem install bundler -v 2.0.0.pre1
+        command: gem install bundler -v 2.0.2
 
     ## Dependencies
     ruby_dependencies: &ruby_dependencies
