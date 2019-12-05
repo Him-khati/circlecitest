@@ -43,6 +43,13 @@
         paths:
           - vendor/bundle
 
+
+    ## Dependencies
+    install_ruby_bundler: &install_ruby_bundler
+      run:
+        name: Install Bundler 2
+        command: gem install bundler -v 2.0.0.pre1
+
     ## Dependencies
     ruby_dependencies: &ruby_dependencies
       run:
@@ -62,6 +69,7 @@
         - checkout
         - *restore_gradle_cache
         - *restore_gems_cache
+        - *install_ruby_bundler
         - *ruby_dependencies
         - *android_dependencies
         - *save_gradle_cache
@@ -83,6 +91,7 @@
         - checkout
         - *restore_gradle_cache
         - *restore_gems_cache
+        - *install_ruby_bundler
         - *ruby_dependencies
         - *android_dependencies
         - *save_gradle_cache
@@ -110,6 +119,7 @@
         - checkout
         - *restore_gradle_cache
         - *restore_gems_cache
+        - *install_ruby_bundler
         - *ruby_dependencies
         - *android_dependencies
         - *save_gradle_cache
@@ -125,6 +135,7 @@
         - checkout
         - *restore_gradle_cache
         - *restore_gems_cache
+        - *install_ruby_bundler
         - *ruby_dependencies
         - *android_dependencies
         - *save_gradle_cache
